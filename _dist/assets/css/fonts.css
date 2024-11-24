@@ -1,0 +1,44 @@
+
+
+// Pixel font, used for nav
+
+@font-face {
+    font-family: "Disposable Droid";
+    src:  url("/assets/fonts/disposabledroid.woff2") format("woff2");
+    font-style: normal;
+    font-weight: normal;
+    font-display: fallback;
+}
+
+
+@font-face {
+    font-family: "Disposable Droid";
+    src:  url("/assets/fonts/disposabledroid-b.woff2") format("woff2");
+    font-style: normal;
+    font-weight: bold;
+    font-display: fallback;
+}
+
+
+@font-face {
+    font-family: "Disposable Droid";
+    src:  url("/assets/fonts/disposabledroid-i.woff2") format("woff2");
+    font-style: italic;
+    font-weight: normal;
+    font-display: fallback;
+}
+
+
+@font-face {
+    font-family: "Disposable Droid";
+    src:  url("/assets/fonts/disposabledroid-bi.woff2") format("woff2");
+    font-style: italic;
+    font-weight: bold;
+    font-display: fallback;
+}
+
+
+// Another pixel font
+
+
+
