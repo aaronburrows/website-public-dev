@@ -2,31 +2,40 @@
 
 
 :root {
+	color-scheme: dark;
+
 	--clr-blue: #273cef;
+	--clr-blue-alpha-70: #273befb3;
+	--clr-blue-light: #5566ff;
+	--clr-blue-dark: #172182;
 	--clr-blue-black: #020415;
-  
+
 	--clr-pink: #f103a0;
 	--clr-pink-light: #fc29b6;
-	--clr-fuchsia: #e515f8;
+
 	--clr-purple: #b414ff;
+	--clr-purple-dark: #64088e;
 	--clr-purple-black: #420061;
+
 	--clr-teal: #1dc3b3;
+	--clr-teal-dark: #013a44;
+
 	--clr-cyan: #32e1d0;
 	--clr-cyan-alpha-70: #32e1cfb3;
 	--clr-cyan-bright: #5ee8da;
+
 	--clr-orange: #ec7d06;
 	--clr-white: #f0e8ff;
 	--clr-bright-white: #fff;
-	--clr-hex-link: #e516f8;
-	--clr-hex-meta: #190cca;
-	--clr-hex-meta-dark: #0d066a;
-	--clr-hex-bg: #0c0642;
+
+	--clr-beige: #f5f5e5;
+	--clr-beige-dark: #e2e2d9;
+	--clr-dark-gray: #3a3a38;
 
 	font-size: 100%;
 
-	--font-default: "Inter", "Helvetica", "Helvetica Neue", "Open Sans", Arial, sans-serif;
-
-    --font-alternate: "Disposable Droid", Pixel7, monospace;
+	--font-default: Inter, Roboto, "Helvetica Neue", Helvetica, "Arial Nova", "Nimbus Sans", "Open Sans", Arial, sans-serif;
+	--font-alternate: "Disposable Droid", Pixel7, monospace;
 	
 	--font-body: var(--font-default);
 	--font-headings: var(--font-default);
@@ -42,9 +51,6 @@
 	--text-nav: var(--clr-cyan-alpha-70);
 	--text-nav-dark: var(--clr-teal);
 
-	--text-meta: var(--clr-hex-meta);
-	--text-meta-dark: var(--clr-hex-meta-dark);
-
 	--gradient-color1: #fc2bb5;
 	--gradient-color2: #fa962b;
 
@@ -52,20 +58,39 @@
 	--bg2: var(--clr-purple-black);
 
 	--text-heading: var(--clr-bright-white);
-	--bg: var(--clr-hex-bg);
 
 	--text-selection: var(--clr-pink);
 
+	/* @media (prefers-color-scheme: dark) {
+		--bg1: var(--clr-blue-black);
+		--bg2: var(--clr-purple-black);
+		--text-heading: var(--clr-bright-white);
+		--text-main: var(--clr-white);
+		--text-main-bright: var(--clr-cyan-bright);
+		--text-nav: var(--clr-cyan-alpha-70);
+		--text-nav-dark: var(--clr-teal);
+	} */
+	/* @media (prefers-color-scheme: light) {
+		--bg1: var(--clr-beige-dark);
+		--bg2: var(--clr-beige);
+		--text-heading: var(--clr-blue-dark);
+		--text-main: var(--clr-dark-gray);
+		--text-main-bright: var(--clr-blue);
+		--text-nav: var(--clr-blue-alpha-70);
+		--text-nav-dark: var(--clr-blue-dark);
+	} */
+	
 	--phone-safe-ratio: 0.75;
 	--phone-safe: 
-		calc(env(safe-area-inset-top) * var(--phone-safe-ratio))
-		calc(env(safe-area-inset-right) * var(--phone-safe-ratio))
-		calc(env(safe-area-inset-bottom) * var(--phone-safe-ratio))
-		calc(env(safe-area-inset-left) * var(--phone-safe-ratio));
+	calc(env(safe-area-inset-top) * var(--phone-safe-ratio))
+	calc(env(safe-area-inset-right) * var(--phone-safe-ratio))
+	calc(env(safe-area-inset-bottom) * var(--phone-safe-ratio))
+	calc(env(safe-area-inset-left) * var(--phone-safe-ratio));
 	--phone-safe-top: calc(env(safe-area-inset-top) * var(--phone-safe-ratio));
 	--phone-safe-right: calc(env(safe-area-inset-right) * var(--phone-safe-ratio));
 	--phone-safe-bottom: calc(env(safe-area-inset-bottom) * var(--phone-safe-ratio));
 	--phone-safe-left: calc(env(safe-area-inset-left) * var(--phone-safe-ratio));
+	
 }  
 * {
 	box-sizing: border-box;
@@ -78,11 +103,12 @@ img {
 	border: none;
 }
 html {
-	padding: var(--phone-safe);
-	background: var(--bg1);
-	background-image: linear-gradient(157deg, var(--bg1),var(--bg2));
 }
 body {
+	color-scheme: dark light;
+	padding: calc(var(--phone-safe) + 1.2rem);
+	background: var(--bg1);
+	background-image: linear-gradient(157deg, var(--bg1),var(--bg2));
 	color: var(--text-main);
 	padding: 1.2rem;
 	margin: 0;
@@ -208,18 +234,10 @@ h2 {
 .page-header {
 	.logo {
 		z-index: 12;
-	}
-	.logo-text {
 		color: var(--text-heading);
-		margin: 0;
-		h1 {
-			text-transform: uppercase;
-			font-weight: 700;
-			letter-spacing: 0.4em;
-			font-size: 6vw;
-			text-align: center;
+		svg, path {
+			fill: currentColor;
 		}
-		
 	}
 }
 .main-nav {
@@ -255,7 +273,7 @@ h2 {
 			position: relative;
 			&:hover {
 				background: var(--text-nav-dark);
-				color: var(--bg);
+				color: var(--bg1);
 				text-shadow: none;
 				box-shadow: 0 0 15px;
 			}
