@@ -34,7 +34,7 @@
 	--clr-beige-dark: #e2e2d9;
 	--clr-dark-gray: #3a3a38;
 
-	font-size: 100%;
+	/* font-size: 100%; */
 
 	--font-default: Inter, Roboto, "Helvetica Neue", Helvetica, "Arial Nova", "Nimbus Sans", "Open Sans", Arial, sans-serif;
 	--font-alternate: "Disposable Droid", Pixel7, monospace;
@@ -108,7 +108,7 @@
 		calc(env(safe-area-inset-bottom))
 		calc(env(safe-area-inset-left) + var(--site-padding));
 	@media only screen and (width >= 600px) {
-		--site-padding: 0.8rem;
+		--site-padding: 1.2rem;
 		/* min-height: calc(100vh - 2.4rem - 4px); */
 	}
 	@media only screen and (width >= 1000px) {
