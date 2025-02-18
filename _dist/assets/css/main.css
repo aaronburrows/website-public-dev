@@ -101,7 +101,7 @@
 		--text-nav: var(--clr-blue-alpha-70);
 		--text-nav-dark: var(--clr-blue-dark);
 	} */
-	--site-padding: 0.5rem;
+	--site-padding: 1rem;
 	--phone-safe: 
 		calc(env(safe-area-inset-top))
 		calc(env(safe-area-inset-right) + var(--site-padding))
@@ -136,7 +136,6 @@ html {
 }
 body {
 	color-scheme: dark light;
-	padding: var(--phone-safe);
 	padding: 0;
 	color: var(--text-main);
 	margin: 0;
@@ -149,6 +148,7 @@ body {
 		width: 100%;
 		max-width: var(--header-width);
 		margin-inline: auto;
+		padding: var(--phone-safe);
 	}
 }
 .content-wrapper {
@@ -160,20 +160,13 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding: 2rem 0;
 	min-height: 100vh;
-	.content-body {
+	.wrap {
 		margin: 0 auto;
 		padding: 0 1rem;
 		width: 100%;
 		max-width: calc(800px + 6rem);
 		max-width: var(--body-width);
-		@media (min-width: 600px) {
-			padding: 0 3rem;
-		}
-	}
-	@media (min-width: 600px) {
-		padding: 3rem 0 5rem;
 	}
 }
 .page-footer {
@@ -185,11 +178,13 @@ main {
 }
 
 .hero {
-	.content-body {
+	padding-block: 5rem;
+	.wrap {
 		display: flex;
 		flex-direction: row;
 		gap: 1.5rem;
 		align-items: center;
+		max-width: 800px;
 	}
 	.copy {
 		display: flex;
@@ -294,8 +289,7 @@ a ::selection {
 
 
 .page-header {
-	padding-inline: var(--site-padding);
-	.wrap {
+	.contents {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -306,8 +300,7 @@ a ::selection {
 		padding-block: var(--site-padding);
 		border-width: 0 0 2px;
 		border-style: solid;
-		border-image: var(--gradient-fill);
-
+		border-image: var(--gradient-fill);	
 	}
 	.logo {
 		display: block;
@@ -378,8 +371,10 @@ a ::selection {
 					position: absolute;
 					top: 0; right: 0; bottom: 0;
 					background: var(--text-nav);
-					// opacity: 0.8;
-					animation:blink 1.06s steps(1) infinite;
+					opacity: 0.8;
+					@media (prefers-reduced-motion: no-preference) {
+						animation:blink 1.06s steps(1) infinite;
+					}
 				}
 			}
 		}
