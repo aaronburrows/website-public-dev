@@ -4,6 +4,8 @@
     fill="#ffffff"
     role="img"
     aria-describedby="logo-title logo-desc"
+    width="100"
+    height="100"
 >
     <title id="logo-title">Aaron Burrows Logo</title>
     <desc id="logo-desc">Aaron Burrows spelled out in a box with three rows</desc>
