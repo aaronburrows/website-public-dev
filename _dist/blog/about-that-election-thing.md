@@ -1,10 +1,17 @@
 ---
-userTags: ["politics", "election"]
+userTags:
+    - politics
+    - election
 title: About This Election Thing
 date: 2016-11-10T00:00:00-6:00
-
+hero:
+    image: /blog/images/komacho.jpg
+    alt: ""
+    cover: true
+    desc:
+    width: 1920
+    height: 1080
 ---
-![image](komacho.jpg)
 I've been struggling to write this post since Monday evening. It started as a personal story about my own political stance and how it's evolved over the years (some of that is still in here). Then it became about the election itself and the results. Now, as the week has progressed, I've been thinking about the things about this election, and its aftermath, that have been troubling me.
 
 ## Background
